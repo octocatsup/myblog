@@ -1,0 +1,4 @@
+baseURL = 'https://extrahacked.com/'
+locale = 'en-us'
+title = 'Blog Title Here'
+theme = 'PaperMod'
