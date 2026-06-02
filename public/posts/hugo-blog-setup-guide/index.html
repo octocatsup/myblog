@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Hugo Blog Setup Guide | Blog Title Here</title>
+<meta name="keywords" content="">
+<meta name="description" content="Hugo Blog Setup Guide
+Stack
+
+Hugo - static site generator (write posts in Markdown, builds to HTML)
+GitHub - stores site files, triggers auto-deploy on push
+Cloudflare Pages - free hosting, auto-deploys when GitHub repo updates
+
+Prerequisites
+
+Arch Linux (Omarchy or similar)
+GitHub account with gh CLI installed
+Domain managed on Cloudflare
+
+Step 1 - Install Hugo
+yay -S hugo
+Note: If you are using a Linux distribution that is not Arch-based, find the hugopackage in your repository (e.g., apt for Debian-based, yum or dnf for Fedora) and install it.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/hugo-blog-setup-guide/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/hugo-blog-setup-guide/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Blog Title Here (Alt + H)">Blog Title Here</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Hugo Blog Setup Guide
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-06-01 19:52:41 -0400 EDT'>June 1, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="hugo-blog-setup-guide">Hugo Blog Setup Guide<a hidden class="anchor" aria-hidden="true" href="#hugo-blog-setup-guide">#</a></h1>
+<h2 id="stack">Stack<a hidden class="anchor" aria-hidden="true" href="#stack">#</a></h2>
+<ul>
+<li><strong>Hugo</strong> - static site generator (write posts in Markdown, builds to HTML)</li>
+<li><strong>GitHub</strong> - stores site files, triggers auto-deploy on push</li>
+<li><strong>Cloudflare Pages</strong> - free hosting, auto-deploys when GitHub repo updates</li>
+</ul>
+<h2 id="prerequisites">Prerequisites<a hidden class="anchor" aria-hidden="true" href="#prerequisites">#</a></h2>
+<ul>
+<li>Arch Linux (Omarchy or similar)</li>
+<li>GitHub account with <code>gh</code> CLI installed</li>
+<li>Domain managed on Cloudflare</li>
+</ul>
+<h2 id="step-1---install-hugo">Step 1 - Install Hugo<a hidden class="anchor" aria-hidden="true" href="#step-1---install-hugo">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yay -S hugo
+</span></span></code></pre></div><p><strong>Note</strong>: If you are using a Linux distribution that is not Arch-based, find the <code>hugo</code>package in your repository (e.g., <code>apt</code> for Debian-based, <code>yum</code> or <code>dnf</code> for Fedora) and install it.</p>
+<h2 id="step-2---create-a-site">Step 2 - Create a Site<a hidden class="anchor" aria-hidden="true" href="#step-2---create-a-site">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /path/to/your/blog/folder
+</span></span><span style="display:flex;"><span>hugo new site site
+</span></span><span style="display:flex;"><span>cd site
+</span></span><span style="display:flex;"><span>git init
+</span></span></code></pre></div><p>Hugo creates the site scaffold at <code>blog/site/</code>.</p>
+<p>Keeping it in a subdirectory prevents Hugo&rsquo;s folders from mixing with other notes in the parent vault.</p>
+<h2 id="step-3---install-the-papermod-theme">Step 3 - Install the PaperMod Theme<a hidden class="anchor" aria-hidden="true" href="#step-3---install-the-papermod-theme">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git submodule add https://github.com/adityatelange/hugo-PaperMod themes/PaperMod
+</span></span></code></pre></div><h2 id="step-4---configure-your-site">Step 4 - Configure Your Site<a hidden class="anchor" aria-hidden="true" href="#step-4---configure-your-site">#</a></h2>
+<p>I am using neovim to edit files, but you can just as easily use <code>nano</code> or <code>gedit</code>.</p>
+<p>Edit the default <code>hugo.toml</code> file using this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvim hugo.toml
+</span></span></code></pre></div><p>Insert the following content to set up your custom domain and theme:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://yourdomain.com/&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">locale</span> = <span style="color:#e6db74">&#39;en-us&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;Your Blog Title&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#39;PaperMod&#39;</span>
+</span></span></code></pre></div><p>I chose PaperMod, but you can choose any Hugo template that you like the look of.</p>
+<p>Save with <code>:wq!</code>.</p>
+<h2 id="step-5---create-your-first-post">Step 5 - Create Your First Post<a hidden class="anchor" aria-hidden="true" href="#step-5---create-your-first-post">#</a></h2>
+<p>To create your first post, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new posts/my-first-post.md
+</span></span></code></pre></div><p>Edit the file in nvim (or other text editor):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvim content/posts/my-first-post.md
+</span></span></code></pre></div><p>Hugo generates a <code>+++</code> TOML frontmatter block. Keep only that block. Remove any extra frontmatter (e.g. from Obsidian templates) if present.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+++</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">date</span> = <span style="color:#e6db74">&#39;2026-06-01T00:00:00-00:00&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">draft</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;My First Post&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+++</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Post</span> <span style="color:#a6e22e">content</span> <span style="color:#a6e22e">goes</span> <span style="color:#a6e22e">here</span>.
+</span></span></code></pre></div><p><strong>Note</strong>: <code>draft = true</code> means the post will not publish publicly until changed to <code>draft = false</code>.</p>
+<h2 id="step-6---preview-locally">Step 6 - Preview Locally<a hidden class="anchor" aria-hidden="true" href="#step-6---preview-locally">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server -D
+</span></span></code></pre></div><p>Visit <code>http://127.0.0.1:1313</code> to preview. The <code>-D</code> flag renders draft posts.</p>
+<h2 id="step-7---push-to-github">Step 7 - Push to GitHub<a hidden class="anchor" aria-hidden="true" href="#step-7---push-to-github">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gh auth login   <span style="color:#75715e"># one-time setup if not already done</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;initial site&#34;</span>
+</span></span><span style="display:flex;"><span>gh repo create myblog --public --source<span style="color:#f92672">=</span>. --push
+</span></span></code></pre></div><h2 id="step-8---connect-cloudflare-pages">Step 8 - Connect Cloudflare Pages<a hidden class="anchor" aria-hidden="true" href="#step-8---connect-cloudflare-pages">#</a></h2>
+<ol>
+<li>Cloudflare dashboard → <strong>Workers &amp; Pages</strong> (account level, not domain level)</li>
+<li>Click <strong>Create application</strong> → <strong>Pages</strong> → <strong>Connect to Git</strong></li>
+<li>Authorize GitHub and select your repo</li>
+<li>Build settings:
+<ul>
+<li>Framework preset: <code>Hugo</code></li>
+<li>Build command: <code>hugo</code></li>
+<li>Build output directory: <code>public</code></li>
+<li>Production branch: <code>master</code></li>
+</ul>
+</li>
+<li>Expand <strong>Environment variables (advanced)</strong> and add:
+<ul>
+<li>Key: <code>HUGO_VERSION</code></li>
+<li>Value: output of <code>hugo version</code> (e.g. <code>0.161.1</code>)</li>
+</ul>
+</li>
+<li>Click <strong>Save and Deploy</strong></li>
+</ol>
+<p>After deploy, add custom domain:</p>
+<ul>
+<li>Go to your Pages project → <strong>Custom Domains</strong> → enter your domain</li>
+<li>Cloudflare auto-adds the DNS CNAME record if your domain is already on Cloudflare</li>
+<li>Status will show &ldquo;Verifying&rdquo; for 1-5 minutes, then go active</li>
+</ul>
+<h2 id="step-9---auto-start-local-preview-optional">Step 9 - Auto-start Local Preview (Optional)<a hidden class="anchor" aria-hidden="true" href="#step-9---auto-start-local-preview-optional">#</a></h2>
+<p>Create a <code>systemd</code> user service so <code>hugo server</code> starts automatically on login.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/.config/systemd/user <span style="color:#75715e"># Creates if it does not already exist</span>
+</span></span><span style="display:flex;"><span>nvim ~/.config/systemd/user/hugo.service <span style="color:#75715e"># Creates and opens the file in neovim</span>
+</span></span></code></pre></div><p>Insert the following content into your editor (in neovim&rsquo;s &ldquo;Normal&rdquo; mode, press p to paste text from the clipboard):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Hugo local preview server</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">simple</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WorkingDirectory</span><span style="color:#f92672">=</span><span style="color:#e6db74">/path/to/your/blog/site</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">hugo server -D</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">default.target</span>
+</span></span></code></pre></div><p>Create the <code>hugo.service</code> in systemd.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl --user enable hugo.service
+</span></span><span style="display:flex;"><span>systemctl --user start hugo.service
+</span></span></code></pre></div><p>Preview available at <code>http://127.0.0.1:1313</code> without manually running <code>hugo server</code>.</p>
+<h2 id="daily-workflow">Daily Workflow<a hidden class="anchor" aria-hidden="true" href="#daily-workflow">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /path/to/your/blog/site
+</span></span><span style="display:flex;"><span>hugo new posts/new-post.md
+</span></span><span style="display:flex;"><span>nvim content/posts/new-post.md
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># write post, set draft = false when ready to publish</span>
+</span></span><span style="display:flex;"><span>git add . <span style="color:#f92672">&amp;&amp;</span> git commit -m <span style="color:#e6db74">&#34;new post&#34;</span> <span style="color:#f92672">&amp;&amp;</span> git push
+</span></span></code></pre></div><p>Cloudflare auto-builds and deploys on every push. No server management needed.</p>
+<h2 id="notes">Notes<a hidden class="anchor" aria-hidden="true" href="#notes">#</a></h2>
+<ul>
+<li>Posts written in standard Markdown are compatible with Obsidian.</li>
+<li>Site files are stored locally; Cloudflare only reads from GitHub on push.</li>
+<li>Free Cloudflare Pages tier supports unlimited sites and deploys.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Blog Title Here</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
