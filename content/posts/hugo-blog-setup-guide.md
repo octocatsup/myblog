@@ -1,6 +1,6 @@
 +++
 date = '2026-06-01T19:52:41-04:00'
-draft = true
+draft = false
 title = 'Hugo Blog Setup Guide'
 +++
 
