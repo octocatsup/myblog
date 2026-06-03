@@ -24,7 +24,8 @@ title = 'Hugo Blog Setup Guide'
 yay -S hugo
 ```
 
-**Note**: If you are using a Linux distribution that is not Arch-based, find the `hugo`package in your repository (e.g., `apt` for Debian-based, `yum` or `dnf` for Fedora) and install it.
+> [!tip]
+> If you are using a Linux distribution that is not Arch-based, find the `hugo`package in your repository (e.g., `apt` for Debian-based, `yum` or `dnf` for Fedora) and install it.
 
 ## Step 2 - Create a Site
 
