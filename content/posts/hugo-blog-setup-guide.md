@@ -8,24 +8,30 @@ title = 'Hugo Blog Setup Guide'
 
 ## Stack
 
-- **Hugo** - static site generator (write posts in Markdown, builds to HTML)
-- **GitHub** - stores site files, triggers auto-deploy on push
-- **Cloudflare Pages** - free hosting, auto-deploys when GitHub repo updates
+- **Hugo**.  A static site generator (write posts in Markdown, builds to HTML).
+- **GitHub**. Stores site files, triggers auto-deploy on push.
+- **Cloudflare Pages**. Provides free hosting, auto-deploys when GitHub repo updates.
 
 ## Prerequisites
 
-- Arch Linux (Omarchy or similar)
+- Linux (tested using Arch-based Omarchy)
 - GitHub account with `gh` CLI installed
-- Domain managed on Cloudflare
+- Register and set up an account on Cloudflare (https://cloudflare.com)
+- Register domain name using Cloudflare or other registrar (optional)
+- Obsidian app for writing markdown posts (optional)
 
 ## Step 1 - Install Hugo
+
+In Arch-based distributions, run the following command:
 
 ```bash
 yay -S hugo
 ```
 
+If you are using a distribution that is not Arch-based, you can find the `hugo` package in your distro's repository and install it.
+
 > [!tip]
-> If you are using a Linux distribution that is not Arch-based, find the `hugo`package in your repository (e.g., `apt` for Debian-based, `yum` or `dnf` for Fedora) and install it.
+> You can use `apt` for Debian-based systems, `dnf` for Fedora, or `zypper` for openSUSE.
 
 ## Step 2 - Create a Site
 
@@ -95,7 +101,8 @@ title = 'My First Post'
 Post content goes here.
 ```
 
-**Note**: `draft = true` means the post will not publish publicly until changed to `draft = false`.
+> [!important]
+> `draft = true` means the post will not publish publicly until changed to `draft = false`.
 
 ## Step 6 - Preview Locally
 
