@@ -6,8 +6,69 @@
     <description>Recent content in Posts on Blog Title Here</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jun 2026 19:24:22 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 22:21:41 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Syncthing Status Module for Waybar (Omarchy)</title>
+      <link>http://localhost:1313/posts/syncthing-waybar-module-omarchy/</link>
+      <pubDate>Tue, 09 Jun 2026 22:21:41 -0400</pubDate>
+      <guid>http://localhost:1313/posts/syncthing-waybar-module-omarchy/</guid>
+      <description>&lt;h1 id=&#34;syncthing-status-module-for-waybar-omarchy&#34;&gt;Syncthing Status Module for Waybar (Omarchy)&lt;/h1&gt;
+&lt;p&gt;A lightweight custom Waybar module that polls Syncthing&amp;rsquo;s local API and shows sync status as an icon. No tray app, no boost dependency, nothing to break on a rolling-release update. Click the icon to open the Syncthing Web UI.&lt;/p&gt;
+&lt;p&gt;Icon meanings:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Icon&lt;/th&gt;
+          &lt;th&gt;Class&lt;/th&gt;
+          &lt;th&gt;Meaning&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;󰴽&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;syncthing-idle&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;All folders synced / idle&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;󰓦&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;syncthing-syncing&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Actively syncing&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;󰅙&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;syncthing-error&lt;/code&gt; / &lt;code&gt;syncthing-offline&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Folder error, bad key, or Syncthing not responding&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote class=&#34;callout callout-note&#34;&gt;
+  &lt;p class=&#34;callout-title&#34;&gt;Note&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo Blog Setup Guide</title>
+      <link>http://localhost:1313/posts/hugo-blog-setup-guide/</link>
+      <pubDate>Mon, 01 Jun 2026 19:52:41 -0400</pubDate>
+      <guid>http://localhost:1313/posts/hugo-blog-setup-guide/</guid>
+      <description>&lt;h1 id=&#34;hugo-blog-setup-guide&#34;&gt;Hugo Blog Setup Guide&lt;/h1&gt;
+&lt;h2 id=&#34;stack&#34;&gt;Stack&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hugo&lt;/strong&gt;.  A static site generator (write posts in Markdown, builds to HTML).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;. Stores site files, triggers auto-deploy on push.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare Pages&lt;/strong&gt;. Provides free hosting, auto-deploys when GitHub repo updates.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux (tested using Arch-based Omarchy)&lt;/li&gt;
+&lt;li&gt;GitHub account with &lt;code&gt;gh&lt;/code&gt; CLI installed&lt;/li&gt;
+&lt;li&gt;Register and set up an account on Cloudflare (&lt;a href=&#34;https://cloudflare.com&#34;&gt;https://cloudflare.com&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Register domain name using Cloudflare or other registrar (optional)&lt;/li&gt;
+&lt;li&gt;Obsidian app for writing markdown posts (optional)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;step-1---install-hugo&#34;&gt;Step 1 - Install Hugo&lt;/h2&gt;
+&lt;p&gt;In Arch-based distributions, run the following command:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>My First Post</title>
       <link>http://localhost:1313/posts/my-first-post/</link>

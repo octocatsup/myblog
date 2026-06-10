@@ -3,16 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-06-01T19:24:22-04:00</lastmod>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/configuration/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hyprland/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/omarchy/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/syncthing/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/syncthing-waybar-module-omarchy/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/waybar/</loc>
+    <lastmod>2026-06-09T22:21:41-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/hugo-blog-setup-guide/</loc>
+    <lastmod>2026-06-01T19:52:41-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/my-first-post/</loc>
     <lastmod>2026-06-01T19:24:22-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-06-01T19:24:22-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>
